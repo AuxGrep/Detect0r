@@ -11,7 +11,7 @@ import sys
 from banner import banner
 
 clean = "clear"
-required = {'scapy', 'gTTS'} #kama huna hii package install manual pip3 install scapy or sudo apt-get install python3-scapy
+required = {'scapy', 'gTTS'} #IKIFAIL install manual pip3 install scapy or sudo apt-get install python3-scapy
 installed = {pkg.key for pkg in pkg_resources.working_set}
 missing = required - installed
 
