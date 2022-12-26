@@ -1,5 +1,7 @@
-#JUST TEMPORARY SCRIPT 2 DETECT HIDDEN WIFI ATTACKS 
-#written By_ Hezron
+# JUST TEMPORARY SCRIPT 2 DETECT HIDDEN WIFI ATTACKS 
+# written By_ Auxgrep
+# USAGE: python3 detector.py <your_card_interface_in_the_monitor_mode>
+# example: python3 detector.py wlan1mon
 
 import time
 import subprocess
@@ -19,9 +21,9 @@ if missing:
     python = sys.executable
     subprocess.check_call([python, '-m', 'pip', 'install', *missing], stdout=subprocess.DEVNULL)
     
-os.system(clean)
+#os.system(clean)
 time.sleep(2)
-intr = input("Enter monitor mode interface: ")
+intr = str(sys.argv[1])
 print()
 Dfilter1 = "'wlan type mgt and (subtype deauth or subtype disassoc)'"
 time.sleep(3)
